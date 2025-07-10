@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Click Tracker</title>
+  <title>Menu Click Tracker</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9M330PW0H"></script>
 <script>
@@ -23,7 +23,7 @@
       clickCount++;
       document.getElementById('counter').textContent = clickCount;
       
-      gtag('event', 'cta_main_menu_click', {
+      gtag('event', 'main_menu_click', {
         'event_category': 'engagement',
         'event_label': 'main menu',
         'value': clickCount
@@ -33,7 +33,7 @@
       secondaryClickCount++;
       document.getElementById('counter2').textContent = secondaryClickCount;
       
-      gtag('event', 'cta_caseaction_menu_click', {
+      gtag('event', 'caseaction_menu_click', {
         'event_category': 'engagement',
         'event_label': 'case action',
         'value': secondaryClickCount
@@ -82,7 +82,7 @@ gtag('config', 'G-T9M330PW0H');
   <button onclick="trackSecondaryClick()">Case Action Menu</button>
   <p>Case Action Menu Cliiked: <span id="counter2">0</span></p>
   <br/>
-  <button onclick="trackNAClick()">Click Me - NA</button>
-  <p>Clicks - NA: <span id="counter3">0</span></p>
+  <button onclick="trackNAClick()">Save</button>
+  <p>Save Clicked: <span id="counter3">0</span></p>
 </body>
 </html>
