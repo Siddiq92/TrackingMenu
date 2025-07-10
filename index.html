@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Click Tracker</title>
+  <script>
+    // Click Tracking Function
+    let clickCount = 0;
+    let secondaryClickCount = 0;
+    let naClickCount = 0;
+    function MainMenu() {
+      clickCount++;
+      document.getElementById('counter').textContent = clickCount;
+      
+      gtag('event', 'cta_main_menu_click', {
+        'event_category': 'engagement',
+        'event_label': 'Main Menu',
+        'value': clickCount
+      });
+    }
+    function CaseAction(){
+      secondaryClickCount++;
+      document.getElementById('counter2').textContent = secondaryClickCount;
+      
+      gtag('event', 'cta_caseaction_click', {
+        'event_category': 'engagement',
+        'event_label': 'Case Action',
+        'value': secondaryClickCount
+      });
+    }
+    
+  </script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+  <!-- Google tag (gtag.js) -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZQ2N4VVKN"></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config', 'G-EZQ2N4VVKN');
+
+</script>
+<body>
+  <h1>Click Tracker</h1>
+  <button onclick="MainMenu()">Main Menu Under Support- Booking Consultation</button>
+    <br/>
+
+ <br/>
+ <br/>
+
+  <button onclick="CaseAction()">Under Case Action - Booking Consultation</button>
+   </body>
+</html>
